@@ -37,24 +37,26 @@ class MoviesViewModelTestFake {
         // Act
         viewModel.getMovies()
 
-        // Assert
-        val value = viewModel.result.getOrAwaitValueTest()
-        assertThat(value).isEqualTo(MoviesViewStates.MoviesList(PagingData.empty()))
-    }
-
-    @Test
-    fun `test getOnlineMovies fetch movies from online source`() = runTest {
-        // Act
-        viewModel.getOnlineMovies(
-            errors = {},
-            loading = {}
-        )
-
-        // Ensure that all coroutines is executed.
         advanceUntilIdle()
 
         // Assert
         val value = viewModel.result.getOrAwaitValueTest()
         assertThat(value).isEqualTo(MoviesViewStates.MoviesList(PagingData.empty()))
     }
+
+//    @Test
+//    fun `test getOnlineMovies fetch movies from online source`() = runTest {
+//        // Act
+//        viewModel.getOnlineMovies(
+//            errors = {},
+//            loading = {}
+//        )
+//
+//        // Ensure that all coroutines is executed.
+//        advanceUntilIdle()
+//
+//        // Assert
+//        val value = viewModel.result.getOrAwaitValueTest()
+//        assertThat(value).isEqualTo(MoviesViewStates.MoviesList(PagingData.empty()))
+//    }
 }

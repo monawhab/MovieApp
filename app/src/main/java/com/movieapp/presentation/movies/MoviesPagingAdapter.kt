@@ -21,6 +21,7 @@ class MoviesPagingAdapter(private val onFavClick: (movieDto: MovieDto) -> Unit) 
 
         holder.binding.apply {
             titleTV.text = currentItem?.title
+            releaseDateTV.text = currentItem?.date
             posterIV.loadImage(currentItem?.posterPath.orEmpty())
             favIV.setImageResource(if (currentItem!!.isFav) R.drawable.fav else R.drawable.un_fav)
             favIV.setOnClickListener {

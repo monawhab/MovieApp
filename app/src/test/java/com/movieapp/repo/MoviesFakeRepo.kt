@@ -8,6 +8,9 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOf
 
 class MoviesFakeRepo : MoviesRepo {
+    override fun getMovies(): Flow<PagingData<MovieDto>> {
+        return flowOf(PagingData.empty()) // Emits immediately for testing
+    }
 
     override suspend fun getOnlineMovies(
         errors: (ErrorTypes) -> Unit,
@@ -26,4 +29,15 @@ class MoviesFakeRepo : MoviesRepo {
     }
 
     override suspend fun hasStoredPages() = true
+    override suspend fun getAllFav(): Flow<List<MovieDto>> {
+        TODO("Not yet implemented")
+    }
+
+    override suspend fun addFav(movie: MovieDto) {
+        TODO("Not yet implemented")
+    }
+
+    override suspend fun removeFav(movieId: Int) {
+        TODO("Not yet implemented")
+    }
 }

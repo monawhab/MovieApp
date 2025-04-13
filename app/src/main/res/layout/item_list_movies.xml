@@ -21,17 +21,32 @@
         android:id="@+id/titleTV"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="6dp"
         android:ellipsize="end"
-        android:letterSpacing="0.1"
         android:maxLines="1"
         android:textColor="@color/black"
-        android:textSize="22sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/ratingTV"
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/posterIV"
+        tools:text="Dirilis Ertugrul" />
+
+    <TextView
+        android:id="@+id/releaseDateTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:ellipsize="end"
+        android:letterSpacing="0.1"
+        android:maxLines="1"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/ratingTV"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTV"
         tools:text="Dirilis Ertugrul" />
 
     <TextView
